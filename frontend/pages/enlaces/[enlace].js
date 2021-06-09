@@ -70,7 +70,7 @@ export default ({enlace}) => {
     return (
         <Layout>
 
-            <Canvas style={{position:'absolute'}} url={`${process.env.backendURL}/api/archivos/${enlace.archivo}`} />
+            <Canvas style={{position:'relative', height:'50vh'}} url={`${process.env.backendURL}/api/archivos/${enlace.archivo}`} />
 
             {
                 tienePassword ? (

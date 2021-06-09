@@ -40,7 +40,7 @@ const Index = () => {
         <div className="md:w-4/5 xl:w-3/5 mx-auto mb-32">
           { url ? (
             <>
-              <p className="text-center text-2xl mt-10">
+              <p className="text-center text-red-600 text-2xl mt-10">
                   <span className="font-bold text-red-700 text-3xl uppercase">Tu URL es:</span> {`${process.env.frontendURL}/enlaces/${url}`} 
               </p>
               <button 
