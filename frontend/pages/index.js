@@ -5,6 +5,12 @@ import Dropzone from '../components/Dropzone';
 import authContext from '../context/auth/authContext';
 import appContext from '../context/app/appContext';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+
+// const Canvas = dynamic(() => import('../components/canvas/CanvasThree'), {
+//   ssr: false,
+// })
 
 
 const Index = () => {
@@ -28,6 +34,9 @@ const Index = () => {
 
   return ( 
     <Layout>
+
+        {/* <Canvas url={`${process.env.backendURL}/api/archivos/${url}`} /> */}
+
         <div className="md:w-4/5 xl:w-3/5 mx-auto mb-32">
           { url ? (
             <>
@@ -61,6 +70,7 @@ const Index = () => {
             </>
           )}
         </div>
+
     </Layout>
    );
 }

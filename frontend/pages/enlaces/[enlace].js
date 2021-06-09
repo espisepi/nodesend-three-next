@@ -3,6 +3,11 @@ import clienteAxios from '../../config/axios';
 import React, {useState, useContext } from 'react';
 import appContext from '../../context/app/appContext';
 import Alerta from '../../components/Alerta';
+import dynamic from 'next/dynamic';
+
+const Canvas = dynamic(() => import('../../components/canvas/CanvasThree'), {
+    ssr: false,
+  })
 
 export async function getServerSideProps({params}) {
     const { enlace } = params;
@@ -64,6 +69,9 @@ export default ({enlace}) => {
 
     return (
         <Layout>
+
+            <Canvas style={{position:'absolute'}} url={`${process.env.backendURL}/api/archivos/${enlace.archivo}`} />
+
             {
                 tienePassword ? (
                     <>
@@ -102,6 +110,7 @@ export default ({enlace}) => {
                     </>
                 ) : (
                     <>
+                    <div className="z-50 relative">
                         <h1 className="text-4xl text-center text-gray-700">Descarga tu archivo:</h1>
                         <div className="flex items-center justify-center mt-10">
                             <a 
@@ -110,6 +119,7 @@ export default ({enlace}) => {
                                 download    
                             >Aquí</a>
                         </div>
+                    </div>
                     </>
                 )
             }

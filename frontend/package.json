@@ -8,12 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-three/drei": "^6.0.2",
+    "@react-three/fiber": "^7.0.1",
     "axios": "^0.19.2",
     "formik": "^2.1.4",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-dropzone": "^11.0.1",
+    "three": "^0.129.0",
     "yup": "^0.29.1"
   }
 }
